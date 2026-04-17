@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <nav class="p-6 border-b border-gray-800">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">DEV_PORTFOLIO</h1>
+            <div class="space-x-6 text-gray-400">
+                <a href="#projects" class="hover:text-white">Projects</a>
+                <a href="#about" class="hover:text-white">About</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="max-w-4xl mx-auto py-20 px-6 text-center">
+        <h2 class="text-5xl font-extrabold mb-4">Software Engineering Student</h2>
+        <p class="text-xl text-gray-400 mb-8">Building robust Java systems and exploring the logic behind computer architecture.</p>
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition">Get In Touch</a>
+    </section>
+
+    <section id="projects" class="max-w-4xl mx-auto py-20 px-6">
+        <h3 class="text-2xl font-bold mb-10 border-l-4 border-blue-600 pl-4">Featured Projects</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <h4 class="text-xl font-semibold mb-2">Library Management System</h4>
+                <p class="text-gray-400 mb-4 text-sm">A Java-based system focusing on OOP principles, custom data normalization, and XML serialization.</p>
+                <span class="text-xs font-mono bg-gray-700 px-2 py-1 rounded">Java</span>
+                <span class="text-xs font-mono bg-gray-700 px-2 py-1 rounded ml-2">XML</span>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <h4 class="text-xl font-semibold mb-2">Traffic Logic Controller</h4>
+                <p class="text-gray-400 mb-4 text-sm">Designing crossroads logic using NAND-only gates and optimized Boolean expressions.</p>
+                <span class="text-xs font-mono bg-gray-700 px-2 py-1 rounded">Digital Logic</span>
+                <span class="text-xs font-mono bg-gray-700 px-2 py-1 rounded ml-2">Circuit Design</span>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
