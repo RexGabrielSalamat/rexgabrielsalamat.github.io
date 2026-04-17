@@ -9,13 +9,13 @@
 </head>
 <body class="bg-black text-gray-200 font-sans">
 
-    <nav class="p-6 border-b border-gray-900 bg-black">
+    <nav class="p-6 border-b border-gray-900 bg-black sticky top-0 z-50">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tight text-white">REXGABRIEL_PORTFOLIO</h1>
+            <h1 class="text-xl font-bold tracking-tight text-white">RE_GABRIEL_PORTFOLIO</h1>
             <div class="space-x-6 text-gray-400">
+                <a href="#about" class="hover:text-red-500 transition">About</a>
                 <a href="#projects" class="hover:text-red-500 transition">Projects</a>
                 <a href="#skills" class="hover:text-red-500 transition">Skills</a>
-                <a href="#about" class="hover:text-red-500 transition">About</a>
                 <a href="#contact" class="hover:text-red-500 transition">Contact</a>
             </div>
         </div>
@@ -24,19 +24,39 @@
     <section class="max-w-4xl mx-auto py-24 px-6 text-center">
         <h2 class="text-5xl font-extrabold mb-4 text-white">Software Engineering Student</h2>
         <p class="text-xl text-gray-400 mb-8">Building robust systems and exploring digital logic in Java & OCaml.</p>
-        <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition duration-200">Get In Touch</a>
+        <div class="flex justify-center gap-4">
+            <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition duration-200">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="max-w-4xl mx-auto py-10 px-6 text-gray-400 leading-relaxed">
+        <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-red-600 pl-4">About Me</h3>
+        <p class="mb-4">
+            I am a University student driven by the challenge of optimizing complex systems. Whether I'm 
+            building a <strong>Library Management System in Java</strong> or simplifying <strong>Boolean expressions</strong> for 
+            hardware logic, I focus on efficiency and clean architecture.
+        </p>
+        <p>
+            When I'm not in VS Code or Simuaid, you can find me analyzing performance hardware or 
+            collaborating with peers in my role as an Academic Representative.
+        </p>
     </section>
 
     <section id="projects" class="max-w-4xl mx-auto py-20 px-6">
         <h3 class="text-2xl font-bold mb-10 border-l-4 border-red-600 pl-4 text-white">Featured Projects</h3>
         <div class="grid md:grid-cols-2 gap-8">
             
-            <div class="bg-black p-6 rounded-xl border border-gray-900 hover:border-red-800 transition">
-                <h4 class="text-xl font-semibold mb-2 text-white">Library Management System</h4>
-                <p class="text-gray-400 mb-4 text-sm">Focusing on Java OOP, custom XML parsing, and data normalization.</p>
-                <span class="text-xs font-mono bg-gray-900 text-red-400 px-2 py-1 rounded">Java (Swing)</span>
-                <span class="text-xs font-mono bg-gray-900 text-red-400 px-2 py-1 rounded ml-2">XML Parsing</span>
-            </div>
+            <a href="projects/library.html" class="block group">
+                <div class="bg-black p-6 rounded-xl border border-gray-900 group-hover:border-red-800 transition h-full">
+                    <h4 class="text-xl font-semibold mb-2 text-white flex justify-between items-center">
+                        Library Management System
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600 group-hover:text-red-500"></i>
+                    </h4>
+                    <p class="text-gray-400 mb-4 text-sm">Focusing on Java OOP, custom XML parsing, and data normalization.</p>
+                    <span class="text-xs font-mono bg-gray-900 text-red-400 px-2 py-1 rounded">Java (Swing)</span>
+                    <span class="text-xs font-mono bg-gray-900 text-red-400 px-2 py-1 rounded ml-2">XML Parsing</span>
+                </div>
+            </a>
 
             <div class="bg-black p-6 rounded-xl border border-gray-900 hover:border-red-800 transition">
                 <h4 class="text-xl font-semibold mb-2 text-white">Traffic Logic Controller</h4>
@@ -48,44 +68,68 @@
         </div>
     </section>
 
+    <section id="experience" class="max-w-4xl mx-auto py-20 px-6">
+        <h3 class="text-2xl font-bold mb-10 border-l-4 border-red-600 pl-4 text-white">Experience & Leadership</h3>
+        
+        <div class="space-y-12">
+            <div class="relative pl-8 border-l border-gray-900">
+                <div class="absolute w-3 h-3 bg-red-600 rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_#dc2626]"></div>
+                <h4 class="text-xl font-bold text-white">Academic Representative</h4>
+                <p class="text-red-500 font-mono text-sm mb-2">University Module Liaison | 2026 - Present</p>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-2xl">
+                    Serving as the primary communication link between the student body and faculty. I advocate for peer feedback regarding curriculum structure and assignment clarity to enhance the learning experience.
+                </p>
+            </div>
+
+            <div class="relative pl-8 border-l border-gray-900">
+                <div class="absolute w-3 h-3 bg-red-600 rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_#dc2626]"></div>
+                <h4 class="text-xl font-bold text-white">Logic & Circuit Design</h4>
+                <p class="text-red-500 font-mono text-sm mb-2">Hardware Optimization Project</p>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-2xl">
+                    Successfully implemented a functional 7-segment display decoder. Applied Boolean algebra and Karnaugh maps to minimize gate counts and optimize processing speed.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section id="skills" class="max-w-4xl mx-auto py-20 px-6">
         <h3 class="text-2xl font-bold mb-10 border-l-4 border-red-600 pl-4 text-white">Technical Expertise</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">Java</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">OCaml</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">Python</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">C/C++</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">Boolean Algebra</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">Digital Electronics</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">Git</div>
-            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white">Algorithm Design</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">Java</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">OCaml</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">Python</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">C/C++</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">Boolean Logic</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">Git/GitHub</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">JSON/XML</div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-900 text-center text-sm font-mono text-white hover:border-red-900 transition">Simuaid</div>
         </div>
     </section>
 
     <section id="contact" class="max-w-4xl mx-auto py-20 px-6 text-center bg-gray-950 rounded-xl my-20 border border-gray-900">
-    <h3 class="text-3xl font-extrabold mb-4 text-white">Let’s Collaborate.</h3>
-    <p class="text-gray-400 mb-10 max-w-lg mx-auto">Open to internship opportunities and technical collaboration.</p>
-    
-    <div class="flex flex-col items-center space-y-6">
-        <div class="flex items-center space-x-4">
-            <i data-lucide="mail" class="text-red-600 w-6 h-6"></i>
-            <a href="mailto:rgs00013@students.stir.ac.uk" class="text-lg text-gray-200 hover:text-red-500 transition font-medium">Email Address</a>
-        </div>
+        <h3 class="text-3xl font-extrabold mb-4 text-white">Let’s Collaborate.</h3>
+        <p class="text-gray-400 mb-10 max-w-lg mx-auto">Open to internship opportunities and technical collaboration.</p>
+        
+        <div class="flex flex-col items-center space-y-6">
+            <div class="flex items-center space-x-4 group">
+                <i data-lucide="mail" class="text-red-600 w-6 h-6"></i>
+                <a href="mailto:rgs00013@students.stir.ac.uk" class="text-lg text-gray-200 group-hover:text-red-500 transition font-medium">rgs00013@students.stir.ac.uk</a>
+            </div>
 
-        <div class="flex items-center space-x-4">
-            <i data-lucide="linkedin" class="text-red-600 w-6 h-6"></i>
-            <a href="https://www.linkedin.com/in/rex-gabriel-salamat-644962255/" target="_blank" class="text-lg text-gray-200 hover:text-red-500 transition font-medium">LinkedIn Profile</a>
-        </div>
+            <div class="flex items-center space-x-4 group">
+                <i data-lucide="linkedin" class="text-red-600 w-6 h-6"></i>
+                <a href="https://www.linkedin.com/in/rex-gabriel-salamat-644962255/" target="_blank" class="text-lg text-gray-200 group-hover:text-red-500 transition font-medium">LinkedIn Profile</a>
+            </div>
 
-        <div class="flex items-center space-x-4">
-            <i data-lucide="github" class="text-red-600 w-6 h-6"></i>
-            <a href="https://github.com/rexgabrielsalamat" target="_blank" class="text-lg text-gray-200 hover:text-red-500 transition font-medium">GitHub Contributions</a>
+            <div class="flex items-center space-x-4 group">
+                <i data-lucide="github" class="text-red-600 w-6 h-6"></i>
+                <a href="https://github.com/rexgabrielsalamat" target="_blank" class="text-lg text-gray-200 group-hover:text-red-500 transition font-medium">GitHub Contributions</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-  lucide.createIcons();
-</script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
