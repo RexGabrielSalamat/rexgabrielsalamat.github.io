@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteor Impact Simulator | Project Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body class="bg-black text-gray-300 font-sans leading-relaxed">
+
+    <nav class="p-6 border-b border-gray-900 sticky top-0 bg-black/90 backdrop-blur-sm z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white font-bold hover:text-red-500 transition">← Back to Portfolio</a>
+            <span class="text-xs font-mono text-red-600 tracking-widest uppercase">NASA Space Apps Challenge</span>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-20 px-6">
+        <h1 class="text-5xl font-black text-white mb-6 tracking-tighter uppercase">Meteor Impact Simulator</h1>
+        <p class="text-xl text-gray-400 mb-10">A physics-based simulation developed for the NASA Space Apps Challenge to assess planetary risk.</p>
+
+        <div class="mb-16">
+            <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Video Demonstration</h2>
+            <div class="aspect-video bg-gray-900 rounded-xl border border-gray-800 flex items-center justify-center overflow-hidden">
+                <video controls class="w-full h-full">
+                    <source src="meteor-demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="mb-16">
+            <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Project Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="group-pic.jpg" alt="Our Team" class="rounded-lg border border-gray-800 grayscale hover:grayscale-0 transition duration-500">
+                <img src="screenshot-1.png" alt="UI Screenshot" class="rounded-lg border border-gray-800">
+                <img src="screenshot-2.png" alt="Simulation Logic" class="rounded-lg border border-gray-800 md:col-span-2">
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Technical Summary</h3>
+                <p class="text-sm text-gray-400">The system estimates affected areas and casualties by processing speed, angle, and meteor composition data through a Python backend, displayed via a responsive web interface.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Role & Collaboration</h3>
+                <p class="text-sm text-gray-400">Lead developer for the repository and integration. Collaborated with a multidisciplinary team to translate complex physics into accessible web visualizations.</p>
+            </div>
+        </div>
+
+        <div class="text-center py-10 border-t border-gray-900">
+            <a href="https://github.com/YOUR_REPO_LINK" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition">
+                View Repository on GitHub
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
