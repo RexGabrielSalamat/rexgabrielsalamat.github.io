@@ -32,11 +32,23 @@
         <div class="mb-16">
             <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Project Gallery</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <img src="group-pic.jpg" alt="Our Team" class="rounded-lg border border-gray-800 grayscale hover:grayscale-0 transition duration-500">
-                <img src="screenshot-1.png" alt="UI Screenshot" class="rounded-lg border border-gray-800">
-                <img src="screenshot-2.png" alt="NASA Space Apps Event - Abu Dhabi 2025" class="rounded-lg border border-gray-800 md:col-span-2">
+        
+            <div class="aspect-video w-full overflow-hidden rounded-lg border border-gray-800">
+                <img src="group-pic.jpg" alt="Our Team" 
+                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+            </div>
+
+            <div class="aspect-video w-full overflow-hidden rounded-lg border border-gray-800">
+                <img src="screenshot-1.png" alt="UI Screenshot" 
+                 class="w-full h-full object-cover">
+            </div>
+
+            <div class="aspect-[16/7] w-full overflow-hidden rounded-lg border border-gray-800 md:col-span-2">
+                <img src="screenshot-2.png" alt="NASA Space Apps 2025 - Abu Dhabi" 
+                 class="w-full h-full object-cover">
             </div>
         </div>
+</div>
 
         <div class="grid md:grid-cols-2 gap-12 mb-16">
             <div>
