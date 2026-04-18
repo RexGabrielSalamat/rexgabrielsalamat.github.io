@@ -3,56 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library System | Project Showcase</title>
-    <link rel="icon" type="image/png" href="../../petercarter.png">
+    <title>Library Analytics System | Project Showcase</title>
+    <link rel="icon" type="image/png" href="../../logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-black text-gray-200 font-sans">
+<body class="bg-black text-gray-300 font-sans leading-relaxed">
 
-    <nav class="p-6 border-b border-gray-900 bg-black">
-        <div class="max-w-4xl mx-auto flex items-center gap-4">
-            <a href="../../index.html" class="text-red-500 hover:text-red-300 transition"> Back to Portfolio</a>
-            <h1 class="text-xl font-bold text-white tracking-tight">PROJECT // LIBRARY_SYSTEM</h1>
+    <nav class="p-6 border-b border-gray-900 sticky top-0 bg-black/90 backdrop-blur-sm z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-white font-bold hover:text-red-500 transition">← Back to Portfolio</a>
+            <span class="text-xs font-mono text-red-600 tracking-widest uppercase">University Project // CSCU9T4</span>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto py-16 px-6">
-        
-        <header class="mb-12 border-b border-gray-900 pb-10">
-            <h2 class="text-4xl font-extrabold mb-3 text-white">Library Management System</h2>
-            <p class="text-xl text-gray-400">Java GUI / OOP / Custom XML / Data Serialization</p>
-            <div class="flex gap-3 mt-6">
-                <span class="text-xs font-mono bg-gray-950 text-red-400 px-3 py-1.5 rounded-full border border-gray-900">CSCU9V4</span>
-                <span class="text-xs font-mono bg-gray-950 text-red-400 px-3 py-1.5 rounded-full border border-gray-900">Java Swing</span>
-            </div>
-        </header>
+    <main class="max-w-4xl mx-auto py-20 px-6">
+        <h1 class="text-5xl font-black text-white mb-6 tracking-tighter uppercase">Library Catalogue Management System</h1>
+        <p class="text-xl text-gray-400 mb-10">A custom Java desktop application focused on Object-Oriented Design and memory-efficient data serialization.</p>
 
-        <section class="mb-16">
-            <h3 class="text-2xl font-bold mb-6 text-white border-l-4 border-red-600 pl-4">System Demo</h3>
-            
-            <div class="bg-gray-950 aspect-video rounded-xl border-2 border-dashed border-gray-800 flex items-center justify-center text-gray-700">
-                [Placeholder for Screenshot or Demo Video]
+        <div class="mb-16">
+            <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Video Demonstration</h2>
+            <div class="aspect-video bg-gray-900 rounded-xl border border-gray-800 flex items-center justify-center overflow-hidden">
+                <video controls preload="auto" class="w-full h-full">
+                    <source src="library_demo.mp4" type="video/mp4">
+                </video>
             </div>
-        </section>
+        </div>
 
-        <section class="grid md:grid-cols-2 gap-12 text-gray-400">
+        <div class="mb-16">
+            <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div class="aspect-video w-full overflow-hidden rounded-lg border border-gray-800">
+                    <img src="dashboard-main.png" alt="System Dashboard" 
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                </div>
+
+                <div class="aspect-video w-full overflow-hidden rounded-lg border border-gray-800">
+                    <img src="data-entry.png" alt="Data Management Interface" 
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                </div>
+
+                <div class="aspect-[16/7] w-full overflow-hidden rounded-lg border border-gray-800 md:col-span-2">
+                    <img src="search-analytics.png" alt="Search and Logic Implementation" 
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
             <div>
-                <h4 class="text-lg font-semibold mb-3 text-white">Key Features</h4>
-                <ul class="list-disc list-inside space-y-2 text-sm">
-                    <li>DashboardUI: Clean Java Swing interface for administrators.</li>
-                    <li>CRUD Operations: Efficiently Create, Read, Update, Delete records.</li>
-                    <li>Search Logic: Integrated custom sorting algorithms for data retrieval.</li>
-                    <li>XML Parsing: Data is saved to an optimized XML structure on close.</li>
-                </ul>
+                <h3 class="text-lg font-bold text-white mb-2">Technical Summary</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Built using <span class="text-white font-medium">Java Swing</span> and <span class="text-white font-medium">OOP principles</span>, this application manages diverse media types through inheritance. The primary technical focus was creating a <span class="text-white font-medium">memory-efficient XML parser</span> using StringBuilder, avoiding heavy external libraries to ensure high performance on local systems.
+                </p>
             </div>
-            
             <div>
-                <h4 class="text-lg font-semibold mb-3 text-white">Technical Highlights</h4>
-                <p class="text-sm leading-relaxed">The main technical challenge was creating memory-efficient XML parsing without using heavy libraries like DOM. I implemented custom serialization logic to ensure fast save/load times even with large databases. The data architecture focuses heavily on encapsulation and inheritance to maximize code reuse.</p>
+                <h3 class="text-lg font-bold text-white mb-2">Key Features</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    The system implements full <span class="text-white font-medium">CRUD functionality</span> with a custom search and filtering engine. I designed a <span class="text-white font-medium">hierarchical classification system</span> for Books, CDs, and DVDs, ensuring automated data normalization and reliable state persistence upon closing the application.
+                </p>
             </div>
-        </section>
+        </div>
 
+        <div class="text-center py-10 border-t border-gray-900">
+            <p class="text-xs text-gray-600 italic max-w-2xl mx-auto">
+                Note: This project was developed for academic purposes at the University of Stirling. 
+                Source code is withheld to uphold Academic Integrity policies.
+            </p>
+        </div>
     </main>
+
 </body>
 </html>
