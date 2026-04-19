@@ -162,19 +162,23 @@
             </div>
 
             <div class="bg-black/20 rounded-xl">
-                <form action="https://formspree.io/f/xrerqnwl" method="POST" class="space-y-3">
-                    <input type="text" name="name" placeholder="Name" required 
-                        class="w-full bg-black border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-600 transition">
-                    
-                    <input type="email" name="email" placeholder="Email" required 
-                        class="w-full bg-black border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-600 transition">
-                    
-                    <textarea name="message" placeholder="Message" rows="2" required 
-                        class="w-full bg-black border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-600 transition resize-none"></textarea>
-                    
-                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-lg text-xs uppercase tracking-widest transition active:scale-95 shadow-lg">
-                        Send
-                    </button>
+                <form id="contact-form" action="https://formspree.io/f/xrerqnwl" method="POST" class="space-y-3">
+                <input type="text" name="name" placeholder="Name" required 
+                class="w-full bg-black border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-600 transition">
+        
+                <input type="email" name="email" placeholder="Email" required 
+                class="w-full bg-black border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-600 transition">
+        
+                <textarea name="message" placeholder="Message" rows="2" required 
+                class="w-full bg-black border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-600 transition resize-none"></textarea>
+        
+                <button type="submit" id="submit-btn" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-lg text-xs uppercase tracking-widest transition active:scale-95 shadow-lg">
+                    Send
+                </button>
+
+                <p id="form-status" class="hidden text-center text-xs font-bold text-green-500 mt-2 uppercase tracking-widest">
+                    Message Sent Successfully!
+                </p>
                 </form>
             </div>
         </div>
