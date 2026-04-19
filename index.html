@@ -185,5 +185,44 @@
     </div>
 </section>
 
+<script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    const button = document.getElementById("submit-btn");
+
+    async function handleSubmit(event) {
+      event.preventDefault(); // This stops the page from jumping to Formspree
+      
+      const data = new FormData(event.target);
+      button.innerText = "SENDING...";
+      button.disabled = true;
+
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.classList.remove("hidden"); // Show the green message
+          form.reset();                      // Clear the inputs
+          button.innerText = "SEND";
+          button.style.display = "none";     // Hide button so they don't spam it
+        } else {
+          status.innerText = "OOPS! THERE WAS A PROBLEM.";
+          status.classList.remove("text-green-500");
+          status.classList.add("text-red-500");
+          status.classList.remove("hidden");
+        }
+      }).catch(error => {
+          status.innerText = "ERROR SENDING MESSAGE.";
+          status.classList.remove("hidden");
+      });
+    }
+    
+    form.addEventListener("submit", handleSubmit);
+</script>
+
 </body>
 </html>
