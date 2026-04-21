@@ -61,7 +61,7 @@
                 <div class="h-10 w-1 bg-red-600 shadow-[0_0_20px_rgba(220,38,38,0.6)]"></div>
                 <h2 class="text-3xl font-black text-white uppercase tracking-widest">Professional Training</h2>
             </div>
-            <div id="trainingGrid" class="grid md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            <div id="trainingGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
         </section>
 
         <section class="mb-32">
@@ -69,7 +69,7 @@
                 <div class="h-10 w-1 bg-red-600 shadow-[0_0_20px_rgba(220,38,38,0.6)]"></div>
                 <h2 class="text-3xl font-black text-white uppercase tracking-widest">Events & Participation</h2>
             </div>
-            <div id="eventGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            <div id="eventGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
         </section>
     </main>
 
@@ -78,10 +78,9 @@
     </footer>
 
     <script>
-        // DATA ARRAYS
         const trainingCerts = [
-            { file: 'Certificate of Completion - Computer System Servicing.jpg', title: 'Computer System Servicing', org: 'Power Technical Training Center', tags: ['Hardware', 'IT Support'] },
-            { file: 'Certificate of Completion - Launchpad Ramp.jpg', title: 'Launchpad Ramp', org: 'Endless Studios', tags: ['Game Dev', 'Logic'] },
+            { file: 'Certificate of Completion - Computer System Servicing.jpg', title: 'Computer System Servicing', org: 'Power Technical Training Center', tags: ['Hardware', 'Networking', 'Computer Logic'] },
+            { file: 'Certificate of Completion - Launchpad Ramp.jpg', title: 'Launchpad Ramp', org: 'Endless Studios', tags: ['Team Collaboration', 'Creativity', 'Game Development'] },
             { file: 'Data Fundamentals - IBM Skillsbuild.jpg', title: 'Data Fundamentals', org: 'IBM Skillsbuild', tags: ['Data Science', 'IBM'] },
             { file: 'Certificate of Completion - Learning Java 11.jpg', title: 'Learning Java 11', org: 'LinkedIn Learning', tags: ['Java', 'OOP'] },
             { file: 'Certificate of Completion - Python Essential Training.jpg', title: 'Python Essential Training', org: 'LinkedIn Learning', tags: ['Python', 'Automation'] },
@@ -93,38 +92,43 @@
         ];
 
         const eventCerts = [
-            { file: 'Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg', title: 'NASA Space Apps Challenge', org: 'Abu Dhabi Hackathon', tags: ['Hackathon', 'Data'] },
+            { file: 'Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg', title: 'NASA Space Apps Challenge', org: 'Abu Dhabi Hackathon', tags: ['Data Analysis', 'Python', 'HTML'] },
             { file: 'Certificate of Participation - AURAK Engineering Explorers Spring Camp.jpg', title: 'Engineering Explorers', org: 'AURAK Spring Camp', tags: ['Engineering', 'Robotics'] },
             { file: 'Certificate of Attendance - Python Programming with Red Hat.jpg', title: 'Python with Red Hat', org: 'Red Hat Academy', tags: ['Enterprise', 'Python'] },
             { file: 'Certificate of Attendance - UOWD Summer Camp.jpg', title: 'Innovation Summer Camp', org: 'UOWD Dubai', tags: ['Leadership', 'Innovation'] }
         ];
 
-        // RENDER FUNCTION
         function renderCerts(data, gridId) {
             const grid = document.getElementById(gridId);
             data.forEach(c => {
                 const card = document.createElement('div');
-                card.className = "group bg-white/5 border border-white/10 rounded-2xl hover:border-red-600 transition-all duration-500 cursor-pointer overflow-hidden backdrop-blur-sm";
+                card.className = "group bg-white/5 border border-white/10 rounded-2xl hover:border-red-600 transition-all duration-500 cursor-pointer overflow-hidden backdrop-blur-sm flex flex-col";
                 card.onclick = () => openModal(c.file, c.title, c.org, c.tags);
                 
+                // Create tags HTML
+                const tagsHTML = c.tags.map(tag => 
+                    `<span class="px-2 py-0.5 bg-red-600/10 border border-red-600/20 text-red-500 text-[7px] font-bold rounded uppercase tracking-tighter">${tag}</span>`
+                ).join('');
+
                 card.innerHTML = `
                     <div class="aspect-video overflow-hidden border-b border-white/5">
                         <img src="${c.file}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://via.placeholder.com/400x225/111/444?text=Image+Not+Found'">
                     </div>
-                    <div class="p-5">
+                    <div class="p-5 flex flex-col flex-grow">
                         <h3 class="text-white font-bold uppercase text-[10px] tracking-tighter mb-1 leading-tight">${c.title}</h3>
-                        <p class="text-gray-500 text-[8px] uppercase tracking-widest">${c.org}</p>
+                        <p class="text-gray-500 text-[8px] uppercase tracking-widest mb-4">${c.org}</p>
+                        <div class="mt-auto flex flex-wrap gap-1.5">
+                            ${tagsHTML}
+                        </div>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // INITIALIZE
         renderCerts(trainingCerts, 'trainingGrid');
         renderCerts(eventCerts, 'eventGrid');
 
-        // MODAL LOGIC
         const modal = document.getElementById('certModal');
         const modalContent = document.getElementById('modalContent');
         const modalImg = document.getElementById('modalImg');
