@@ -160,67 +160,73 @@
     <section id="certificates" class="max-w-6xl mx-auto py-24 px-6">
         <div class="flex items-center gap-4 mb-12">
             <div class="h-10 w-1 bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
-            <h2 class="text-4xl font-black text-white uppercase tracking-tighter">
-                Certifications
-            </h2>
+            <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Certifications</h2>
+        </div>
+
+        <div id="certModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10">
+            <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeModal()"></div>
+            <div class="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-8 max-w-4xl w-full shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
+                <button onclick="closeModal()" class="absolute top-4 right-6 text-gray-500 hover:text-white text-3xl font-light">&times;</button>
+                <div class="flex flex-col gap-6">
+                    <img id="modalImg" src="" alt="Full Certificate" class="w-full rounded-xl border border-white/5 shadow-2xl max-h-[70vh] object-contain bg-black">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <h3 id="modalTitle" class="text-2xl font-black text-white uppercase tracking-tighter leading-tight"></h3>
+                            <p id="modalOrg" class="text-gray-500 text-xs uppercase tracking-widest mt-1"></p>
+                        </div>
+                        <div id="modalTags" class="flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8 mb-16">
-            
-            <a href="certificates/Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg" target="_blank" class="group bg-white/5 border border-gray-800 rounded-2xl hover:border-red-600 transition-all duration-500 hover:-translate-y-2 block overflow-hidden">
+            <div onclick="openModal('certificates/Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg', 'NASA Space Apps Challenge', 'NASA Space Apps - Abu Dhabi', ['Data Analysis', 'Python', 'HTML'])" 
+                class="group bg-white/5 border border-gray-800 rounded-2xl hover:border-red-600 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden">
                 <div class="relative aspect-video overflow-hidden border-b border-gray-800">
-                    <img src="certificates/Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg" alt="NASA Space Apps Certificate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="certificates/Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
-                
                 <div class="p-6 text-center">
-                    <h3 class="text-white font-bold uppercase text-sm mb-1">Certificare of Participation - NASA Space Apps Challenge</h3>
+                    <h3 class="text-white font-bold uppercase text-sm mb-1 leading-tight">NASA Space Apps Challenge</h3>
                     <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4">NASA Space Apps - Abu Dhabi</p>
-                    
                     <div class="flex flex-wrap justify-center gap-2">
                         <span class="px-2 py-1 bg-red-600/10 border border-red-600/20 text-red-500 text-[8px] font-bold rounded uppercase">Data Analysis</span>
                         <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">Python</span>
                         <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">HTML</span>
-                        <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">Team Collaboration</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
-            <a href="certificates/Certificate of Completion - Launchpad Ramp.jpg" target="_blank" class="group bg-white/5 border border-gray-800 rounded-2xl hover:border-red-600 transition-all duration-500 hover:-translate-y-2 block overflow-hidden">
+            <div onclick="openModal('certificates/Certificate of Completion - Launchpad Ramp.jpg', 'Launchpad Ramp', 'Endless Studios', ['Team Collaboration', 'Game Development'])" 
+                class="group bg-white/5 border border-gray-800 rounded-2xl hover:border-red-600 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden">
                 <div class="relative aspect-video overflow-hidden border-b border-gray-800">
-                    <img src="certificates/Certificate of Completion - Launchpad Ramp.jpg" alt="Launchpad Ramp Certificate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    <img src="certificates/Certificate of Completion - Launchpad Ramp.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                
                 <div class="p-6 text-center">
-                    <h3 class="text-white font-bold uppercase text-sm mb-1">Certificate of Completion - Launchpad Ramp</h3>
+                    <h3 class="text-white font-bold uppercase text-sm mb-1 leading-tight">Launchpad Ramp</h3>
                     <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4">Endless Studios</p>
-                    
                     <div class="flex flex-wrap justify-center gap-2">
                         <span class="px-2 py-1 bg-red-600/10 border border-red-600/20 text-red-500 text-[8px] font-bold rounded uppercase">Team Collaboration</span>
-                        <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">Game Development</span>
+                        <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">Game Dev</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
-            <a href="certificates/Certificate of Completion - Computer System Servicing.jpg" target="_blank" class="group bg-white/5 border border-gray-800 rounded-2xl hover:border-red-600 transition-all duration-500 hover:-translate-y-2 block overflow-hidden">
+            <div onclick="openModal('certificates/Certificate of Completion - Computer System Servicing.jpg', 'Computer System Servicing', 'Power Technical Training Center', ['Hardware', 'Networking', 'Logic'])" 
+                class="group bg-white/5 border border-gray-800 rounded-2xl hover:border-red-600 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden">
                 <div class="relative aspect-video overflow-hidden border-b border-gray-800">
-                    <img src="certificates/Certificate of Completion - Computer System Servicing.jpg" alt="System Servicing Certificate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    <img src="certificates/Certificate of Completion - Computer System Servicing.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                
                 <div class="p-6 text-center">
-                    <h3 class="text-white font-bold uppercase text-sm mb-1">Certificate of Completion - Computer System Servicing</h3>
+                    <h3 class="text-white font-bold uppercase text-sm mb-1 leading-tight">Computer System Servicing</h3>
                     <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4">Power Technical Training Center</p>
-                    
                     <div class="flex flex-wrap justify-center gap-2">
                         <span class="px-2 py-1 bg-red-600/10 border border-red-600/20 text-red-500 text-[8px] font-bold rounded uppercase">Hardware</span>
                         <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">Networking</span>
-                        <span class="px-2 py-1 bg-white/5 border border-white/10 text-gray-400 text-[8px] font-bold rounded uppercase">Computer Logic</span>
                     </div>
                 </div>
-            </a>
-
+            </div>
         </div>
 
         <div class="flex justify-center">
@@ -365,6 +371,44 @@
     }
     
     form.addEventListener("submit", handleSubmit);
+
+    // --- MODAL LOGIC FOR CERTIFICATES ---
+    const modal = document.getElementById('certModal');
+    const modalContent = document.getElementById('modalContent');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalOrg = document.getElementById('modalOrg');
+    const modalTags = document.getElementById('modalTags');
+
+    window.openModal = function(imgSrc, title, org, tags) {
+        modalImg.src = imgSrc;
+        modalTitle.innerText = title;
+        modalOrg.innerText = org;
+        modalTags.innerHTML = '';
+        
+        tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = "px-3 py-1 bg-red-600/10 border border-red-600/20 text-red-500 text-[9px] font-bold rounded-full uppercase tracking-tighter";
+            span.innerText = tag;
+            modalTags.appendChild(span);
+        });
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modalContent.classList.remove('scale-95', 'opacity-0');
+            modalContent.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    window.closeModal = function() {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        document.body.style.overflow = 'auto';
+    }
+
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 </script>
 
 </body>
