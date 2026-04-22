@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Analytics System | Project Showcase</title>
+    <title>Library Catalogue Management System - RG's Portfolio</title>
     <link rel="icon" type="image/png" href="assets/petercarter.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -25,10 +25,11 @@
 
     <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <img src="assets/petercarter.png" alt="Logo" class="w-8 h-8 rounded-md object-cover">
                 <h1 class="text-xl font-bold tracking-tighter text-white">RG's Project - Library Catalogue Management System</h1>
-            </div>
+            </a>
+            
             <div class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
                 <a href="index.html#about" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
@@ -111,6 +112,26 @@
         <p class="text-gray-600 text-[10px] uppercase tracking-[0.4em]">&copy; 2026 RG's Portfolio</p>
         <p class="text-gray-400 text-[10px] font-mono mt-1">Built with Passion & Purpose.</p>
     </footer>
+
+    <div id="certModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeModal()"></div>
+        
+        <div class="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-8 max-w-4xl w-full shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-4 right-6 text-gray-500 hover:text-white text-3xl font-light">&times;</button>
+            
+            <div class="flex flex-col gap-6">
+                <img id="modalImg" src="" alt="Full View" class="w-full rounded-xl border border-white/5 shadow-2xl max-h-[70vh] object-contain bg-black">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h3 id="modalTitle" class="text-2xl font-black text-white uppercase tracking-tighter leading-tight"></h3>
+                        <p id="modalOrg" class="text-gray-500 text-xs uppercase tracking-widest mt-1"></p>
+                    </div>
+                    <div id="modalTags" class="flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
