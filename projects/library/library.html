@@ -4,74 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Analytics System | Project Showcase</title>
-    <link rel="icon" type="image/png" href="../../logo.png">
+    <link rel="icon" type="image/png" href="../../petercarter.png">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-gray-300 font-sans leading-relaxed">
+<body class="bg-black text-gray-200 font-sans leading-relaxed overflow-x-hidden">
 
-    <nav class="p-6 border-b border-gray-900 sticky top-0 bg-black/90 backdrop-blur-sm z-50">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-white font-bold hover:text-red-500 transition">← Back to Portfolio</a>
-            <span class="text-xs font-mono text-red-600 tracking-widest uppercase">University Project // CSCU9T4</span>
+    <div class="fixed inset-0 -z-10">
+        <div class="absolute inset-0 opacity-[0.07]" 
+            style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-[800px] h-[800px] bg-red-900/10 blur-[150px] rounded-full"></div>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="../petercarter.png" alt="Logo" class="w-8 h-8 rounded-md object-cover">
+                <h1 class="text-xl font-bold tracking-tighter text-white">RG's Project - Library Catalogue Management System</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
+                <a href="../index.html#about" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
+                <a href="../index.html#certificates" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Certificates</a>
+                <a href="../index.html#contact" class="px-5 py-2 bg-red-600/10 border border-red-600/20 text-red-500 rounded-full text-xs font-bold hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto py-20 px-6">
-        <h1 class="text-5xl font-black text-white mb-6 tracking-tighter uppercase">Library Catalogue Management System</h1>
-        <p class="text-xl text-gray-400 mb-10">A custom Java desktop application focused on Object-Oriented Design and memory-efficient data serialization.</p>
+    <main class="max-w-4xl mx-auto py-32 px-6 relative z-10">
+        <header class="mb-16">
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase leading-none">
+                Library Catalogue <br>
+                <span class="text-red-600 drop-shadow-[0_0_20px_rgba(220,38,38,0.4)]">Management System</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl">
+                A custom Java desktop application focused on Object-Oriented Design and memory-efficient data serialization.
+            </p>
+        </header>
 
-        <div class="mb-16">
-            <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Video Demonstration</h2>
-            <div class="aspect-video bg-gray-900 rounded-xl border border-gray-800 flex items-center justify-center overflow-hidden">
+        <div class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-8 w-1 bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
+                <h2 class="text-2xl font-black text-white uppercase tracking-tighter">Video Demonstration</h2>
+            </div>
+            <div class="aspect-video bg-[#0a0a0a] rounded-2xl border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden">
                 <video controls preload="auto" class="w-full h-full">
                     <source src="library_demo.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
 
-        <div class="mb-16">
-            <h2 class="text-xl font-bold text-white mb-4 border-l-4 border-red-600 pl-4">Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
-                <div class="aspect-video w-full overflow-hidden rounded-lg border border-gray-800">
-                    <img src="dashboard-main.png" alt="System Dashboard" 
-                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+        <div class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-8 w-1 bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
+                <h2 class="text-2xl font-black text-white uppercase tracking-tighter">System Gallery</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5">
+                    <img src="library_json_demo.jpg" alt="JSON Export" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                 </div>
-
-                <div class="aspect-video w-full overflow-hidden rounded-lg border border-gray-800">
-                    <img src="data-entry.png" alt="Data Management Interface" 
-                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                <div class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5">
+                    <img src="library_xml_demo.jpg" alt="XML Export" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                 </div>
-
-                <div class="aspect-[16/7] w-full overflow-hidden rounded-lg border border-gray-800 md:col-span-2">
-                    <img src="search-analytics.png" alt="Search and Logic Implementation" 
-                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                <div class="aspect-[16/7] w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 md:col-span-2">
+                    <img src="library_catalogue_demo.jpg" alt="Full Catalogue" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                 </div>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
-                <h3 class="text-lg font-bold text-white mb-2">Technical Summary</h3>
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <div class="bg-white/5 border border-white/5 p-8 rounded-3xl">
+                <h3 class="text-lg font-black text-white mb-4 uppercase tracking-tighter">Technical Summary</h3>
                 <p class="text-sm text-gray-400 leading-relaxed">
-                    Built using <span class="text-white font-medium">Java Swing</span> and <span class="text-white font-medium">OOP principles</span>, this application manages diverse media types through inheritance. The primary technical focus was creating a <span class="text-white font-medium">memory-efficient XML parser</span> using StringBuilder, avoiding heavy external libraries to ensure high performance on local systems.
+                    Built using <span class="text-white font-medium">Java Swing</span> and <span class="text-white font-medium">OOP principles</span>, this application manages diverse media types through inheritance. The primary focus was creating a <span class="text-white font-medium">memory-efficient XML parser</span> using StringBuilder, avoiding heavy external libraries.
                 </p>
             </div>
-            <div>
-                <h3 class="text-lg font-bold text-white mb-2">Key Features</h3>
+            <div class="bg-white/5 border border-white/5 p-8 rounded-3xl">
+                <h3 class="text-lg font-black text-white mb-4 uppercase tracking-tighter">Key Features</h3>
                 <p class="text-sm text-gray-400 leading-relaxed">
-                    The system implements full <span class="text-white font-medium">CRUD functionality</span> with a custom search and filtering engine. I designed a <span class="text-white font-medium">hierarchical classification system</span> for Books, CDs, and DVDs, ensuring automated data normalization and reliable state persistence upon closing the application.
+                    The system implements full <span class="text-white font-medium">CRUD functionality</span> with a custom search engine. I designed a <span class="text-white font-medium">hierarchical classification</span> for Books, CDs, and DVDs, ensuring automated data normalization and reliable persistence.
                 </p>
             </div>
         </div>
 
-        <div class="text-center py-10 border-t border-gray-900">
-            <p class="text-xs text-gray-600 italic max-w-2xl mx-auto">
-                Note: This project was developed for academic purposes at the University of Stirling. 
-                Source code is withheld to uphold Academic Integrity policies.
+        <footer class="text-center py-10 border-t border-white/5">
+            <p class="text-[10px] text-gray-600 uppercase tracking-[0.3em] italic max-w-2xl mx-auto">
+                Note: Developed for academic purposes at the University of Stirling. 
+                Source code withheld to uphold Academic Integrity.
+            </p>
+        </footer>
+    </main>
+
+    <footer class="relative w-full border-t border-white/5 bg-black py-12 overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-red-900/5 blur-[100px] -z-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+                <span class="text-white font-bold tracking-tighter uppercase">RG's Portfolio</span>
+            </div>
+            <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">
+                &copy; 2026 All Rights Reserved.
+            </p>
+            <p class="text-gray-400 text-[10px] font-mono">
+                Built with Passion & Purpose.
             </p>
         </div>
-    </main>
+    </footer>
 
 </body>
 </html>
