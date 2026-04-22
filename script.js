@@ -1,51 +1,53 @@
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
-const button = document.getElementById("submit-btn");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    const button = document.getElementById("submit-btn");
 
-async function handleSubmit(event) {
-    event.preventDefault();
-    
-    const data = new FormData(event.target);
-    button.innerText = "SENDING...";
-    button.disabled = true;
+    if (form) {
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            button.innerText = "SENDING...";
+            button.disabled = true;
 
-    fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            status.classList.remove("hidden");
-            form.reset();
-            button.innerText = "SEND";
-            button.style.display = "none";
-        } else {
-            status.innerText = "OOPS! THERE WAS A PROBLEM.";
-            status.classList.remove("text-green-500");
-            status.classList.add("text-red-500");
-            status.classList.remove("hidden");
-        }
-    }).catch(error => {
-        status.innerText = "ERROR SENDING MESSAGE.";
-        status.classList.remove("hidden");
-    });
-}
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-if (form) {
-    form.addEventListener("submit", handleSubmit);
-}
+                if (response.ok) {
+                    status.classList.remove("hidden");
+                    form.reset();
+                    button.innerText = "SEND";
+                    button.style.display = "none";
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                status.innerText = "OOPS! THERE WAS A PROBLEM.";
+                status.classList.add("text-red-500");
+                status.classList.remove("hidden");
+                button.innerText = "SEND";
+                button.disabled = false;
+            }
+        });
+    }
+});
 
-// --- MODAL LOGIC FOR CERTIFICATES ---
-const modal = document.getElementById('certModal');
-const modalContent = document.getElementById('modalContent');
-const modalImg = document.getElementById('modalImg');
-const modalTitle = document.getElementById('modalTitle');
-const modalOrg = document.getElementById('modalOrg');
-const modalTags = document.getElementById('modalTags');
+// --- MODAL LOGIC (Global Functions) ---
 
 window.openModal = function(imgSrc, title, org, tags) {
+    const modal = document.getElementById('certModal');
+    const modalContent = document.getElementById('modalContent');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalOrg = document.getElementById('modalOrg');
+    const modalTags = document.getElementById('modalTags');
+
+    if (!modal || !modalImg) return;
+
     modalImg.src = imgSrc;
     modalTitle.innerText = title;
     modalOrg.innerText = org;
@@ -59,6 +61,7 @@ window.openModal = function(imgSrc, title, org, tags) {
     });
 
     modal.classList.remove('hidden');
+    // Tiny delay to trigger the transition animation
     setTimeout(() => {
         modalContent.classList.remove('scale-95', 'opacity-0');
         modalContent.classList.add('scale-100', 'opacity-100');
@@ -67,9 +70,14 @@ window.openModal = function(imgSrc, title, org, tags) {
 }
 
 window.closeModal = function() {
+    const modal = document.getElementById('certModal');
+    const modalContent = document.getElementById('modalContent');
+    
     modalContent.classList.remove('scale-100', 'opacity-100');
     modalContent.classList.add('scale-95', 'opacity-0');
-    setTimeout(() => { modal.classList.add('hidden'); }, 300);
+    setTimeout(() => { 
+        modal.classList.add('hidden'); 
+    }, 300);
     document.body.style.overflow = 'auto';
 }
 
