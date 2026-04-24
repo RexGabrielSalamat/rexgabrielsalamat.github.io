@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meteor Impact Simulator | Project Showcase</title>
-    <link rel="icon" type="image/png" href="../../petercarter.png">
+    <title>RG's Portfolio - Meteor Impact Simulator</title>
+    <link rel="icon" type="image/png" href="assets/petercarter.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-black text-gray-200 font-sans leading-relaxed overflow-x-hidden">
 
@@ -25,15 +21,18 @@
 
     <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="../../petercarter.png" alt="Logo" class="w-8 h-8 rounded-md object-cover">
-                <h1 class="text-xl font-bold tracking-tighter text-white">RG's Team Project - Meteor Impact Simulator</h1>
-            </div>
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="assets/petercarter.png" alt="Logo" class="w-8 h-8 rounded-md object-cover">
+                <h1 class="text-xl font-bold tracking-tighter text-white">RG's Project - Meteor Impact Simulator</h1>
+            </a>
+
             <div class="hidden md:flex items-center space-x-8">
-                <a href="../../index.html" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
-                <a href="../../index.html#about" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
-                <a href="../../index.html#certificates" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Certificates</a>
-                <a href="../../index.html#contact" class="px-5 py-2 bg-red-600/10 border border-red-600/20 text-red-500 rounded-full text-xs font-bold hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest">Contact</a>
+                <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
+                <a href="index.html#about" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
+                <a href="index.html#projects" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Projects</a>
+                <a href="index.html#experience" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Experience</a>
+                <a href="index.html#certificates" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Certificates</a>
+                <a href="index.html#contact" class="px-5 py-2 bg-red-600/10 border border-red-600/20 text-red-500 rounded-full text-xs font-bold hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest">Contact</a>
             </div>
         </div>
     </nav>
@@ -56,7 +55,7 @@
             </div>
             <div class="aspect-video bg-[#0a0a0a] rounded-2xl border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden">
                 <video controls preload="auto" class="w-full h-full">
-                    <source src="meteor_impact_sim_demo.mp4" type="video/mp4">
+                    <source src="assets/projects/meteor/meteor_impact_sim_demo.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
@@ -67,14 +66,17 @@
                 <h2 class="text-2xl font-black text-white uppercase tracking-tighter">Event Gallery</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5">
-                    <img src="screenshot-2.png" alt="Challenge Abu Dhabi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                <div onclick="openModal('assets/projects/meteor/screenshot-2.png', 'NASA Space Apps', 'Abu Dhabi Challenge', ['Hackathon', 'NASA'])" 
+                     class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 cursor-pointer group">
+                    <img src="assets/projects/meteor/screenshot-2.png" alt="Challenge Abu Dhabi" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
                 </div>
-                <div class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5">
-                    <img src="screenshot-1.png" alt="NASA Certificate" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                <div onclick="openModal('assets/projects/meteor/screenshot-1.png', 'NASA Space Apps', 'Impact Analysis UI', ['Python', 'Data Viz'])" 
+                     class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 cursor-pointer group">
+                    <img src="assets/projects/meteor/screenshot-1.png" alt="NASA Certificate" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
                 </div>
-                <div class="aspect-[16/7] w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 md:col-span-2">
-                    <img src="group-pic.jpg" alt="The Team" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                <div onclick="openModal('assets/projects/meteor/group-pic.jpg', 'The Development Team', 'NASA Space Apps RAK/Abu Dhabi', ['Collaboration', 'Engineering'])" 
+                     class="aspect-[16/7] w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 md:col-span-2 cursor-pointer group">
+                    <img src="assets/projects/meteor/group-pic.jpg" alt="The Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
                 </div>
             </div>
         </div>
@@ -101,6 +103,23 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
         </div>
+
+        <div id="certModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10">
+            <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeModal()"></div>
+            <div class="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-8 max-w-4xl w-full shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
+                <button onclick="closeModal()" class="absolute top-4 right-6 text-gray-500 hover:text-white text-3xl font-light">&times;</button>
+                <div class="flex flex-col gap-6">
+                    <img id="modalImg" src="" alt="Full View" class="w-full rounded-xl border border-white/5 shadow-2xl max-h-[70vh] object-contain bg-black">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <h3 id="modalTitle" class="text-2xl font-black text-white uppercase tracking-tighter leading-tight"></h3>
+                            <p id="modalOrg" class="text-gray-500 text-xs uppercase tracking-widest mt-1"></p>
+                        </div>
+                        <div id="modalTags" class="flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="relative z-10 bg-black border-t border-white/5 py-12 text-center">
@@ -108,5 +127,7 @@
         <p class="text-gray-400 text-[10px] font-mono mt-1">Built with Passion & Purpose.</p>
     </footer>
 
+    <script src="script.js"></script>
+    
 </body>
 </html>
