@@ -6,33 +6,9 @@
     <title>RGMS - Certificates</title>
     <link rel="icon" type="image/png" href="../petercarter.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-black text-gray-200 font-sans overflow-x-hidden">
-
-    <div id="certModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeModal()"></div>
-        
-        <div class="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-8 max-w-4xl w-full shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
-            <button onclick="closeModal()" class="absolute top-4 right-6 text-gray-500 hover:text-white text-3xl font-light">&times;</button>
-            
-            <div class="flex flex-col gap-6">
-                <img id="modalImg" src="" alt="Full Certificate" class="w-full rounded-xl border border-white/5 shadow-2xl max-h-[70vh] object-contain bg-black">
-                
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                        <h3 id="modalTitle" class="text-2xl font-black text-white uppercase tracking-tighter leading-tight"></h3>
-                        <p id="modalOrg" class="text-gray-500 text-xs uppercase tracking-widest mt-1"></p>
-                    </div>
-                    <div id="modalTags" class="flex flex-wrap gap-2"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -79,100 +55,68 @@
         </section>
     </main>
 
-    <footer class="relative z-10 bg-black border-t border-white/5 py-12 text-center">
-        <p class="text-gray-600 text-[10px] uppercase tracking-[0.4em]">&copy; 2026 RG's Portfolio</p>
-        <p class="text-gray-400 text-[10px] font-mono mt-1">Built with Passion & Purpose.</p>
+    <footer class="relative w-full border-t border-white/5 bg-black py-12 overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-red-900/5 blur-[100px] -z-10"></div>
+
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+                        <span class="text-white font-bold tracking-tighter uppercase">RG's Portfolio</span>
+                    </div>
+                    <p class="text-gray-500 text-xs tracking-widest uppercase">
+                        Certificates Page
+                    </p>
+                </div>
+
+                <div class="flex gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
+                    <a href="index.html#home" class="hover:text-red-600 transition-colors">Home</a>
+                    <a href="index.html#about" class="hover:text-red-600 transition-colors">About</a>
+                    <a href="index.html#projects" class="hover:text-red-600 transition-colors">Projects</a>
+                    <a href="index.html#experience" class="hover:text-red-600 transition-colors">Experience</a>
+                    <a href="index.html#contact" class="hover:text-red-600 transition-colors">Contact</a>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <p class="text-gray-500 text-[10px] uppercase tracking-widest">
+                        &copy; 2026 All Rights Reserved.
+                    </p>
+                    <p class="text-gray-400 text-[10px] font-mono mt-1">
+                        Built with Passion & Purpose.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <a href="#" class="p-3 bg-white/5 border border-white/10 rounded-full hover:border-red-600 transition-all group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 group-hover:text-red-600 group-hover:-translate-y-1 transition-all"><path d="m18 15-6-6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        const trainingCerts = [
-            { file: 'Certificate of Completion - Computer System Servicing.jpg', title: 'Computer System Servicing', org: 'Power Technical Training Center', tags: ['Hardware', 'Networking', 'Computer Logic'] },
-            { file: 'Certificate of Completion - Launchpad Ramp.jpg', title: 'Launchpad Ramp', org: 'Endless Studios', tags: ['Team Collaboration', 'Creativity', 'Game Development'] },
-            { file: 'Data Fundamentals - IBM Skillsbuild.jpg', title: 'Data Fundamentals', org: 'IBM Skillsbuild', tags: ['Data Science', 'DSLC'] },
-            { file: 'Certificate of Attendance - Python Programming with Red Hat.jpg', title: 'Python with Red Hat Academy', org: 'Red Hat Academy', tags: ['Python'] },
-            { file: 'Certificate of Completion - Learning Java 11.jpg', title: 'Learning Java 11', org: 'LinkedIn Learning', tags: ['Java', 'OOP'] },
-            { file: 'Certificate of Completion - Python Essential Training.jpg', title: 'Python Essential Training', org: 'LinkedIn Learning', tags: ['Python'] },
-            { file: 'Certificate of Completion - Python for Students.jpg', title: 'Python for Students', org: 'LinkedIn Learning', tags: ['Python'] },
-            { file: 'Certificate of Completion - Complete Guide to C Programming Foundations.jpg', title: 'C Programming Foundations', org: 'LinkedIn Learning', tags: ['C Programming Language'] },
-            { file: 'Certificate of Completion - IoT Foundations - Fundamentals.jpg', title: 'IoT Foundations', org: 'LinkedIn Learning', tags: ['IoT', 'Hardware'] },
-            { file: 'Certificate of Completion - Programming Foundations - Inside Computing Hardware.jpg', title: 'Inside Computing Hardware', org: 'LinkedIn Learning', tags: ['Hardware', 'Architecture'] },
-            { file: 'Certificate of Completion - Software Design - Developing Effective Requirements.jpg', title: 'Software Design Requirements', org: 'LinkedIn Learning', tags: ['SDLC', 'Design'] }
-        ];
-
-        const eventCerts = [
-            { file: 'Certificate of Participation - NASA Space Apps Challenge Abu Dhabi.jpg', title: 'NASA Space Apps Challenge', org: 'NASA Space Apps - Abu Dhabi 2025', tags: ['Data Analysis', 'Python', 'HTML'] },
-            { file: 'Certificate of Participation - AURAK Engineering Explorers Spring Camp.jpg', title: 'Engineering Explorers Spring Camp', org: 'American University of Ras Al Khaimah', tags: ['Engineering', 'Computer Science'] },
-            { file: 'Certificate of Attendance - UOWD Summer Camp.jpg', title: 'UOWD Summer Camp', org: 'University of Wollongong Dubai', tags: ['Computer Science', 'Robotics', 'Data Science'] },
-            { file: 'Certificate of Participation - Introduction to the Web Hacking Fundamentals.jpg', title: 'Introduction to the Web Hacking Fundamentals Webinar', org: 'RedTeam Hacker Academy', tags: ['Cybersecurity Basics', 'Ethical Hacking Basics'] }
-        ];
-
-        function renderCerts(data, gridId) {
-            const grid = document.getElementById(gridId);
-            data.forEach(c => {
-                const card = document.createElement('div');
-                card.className = "group bg-white/5 border border-white/10 rounded-2xl hover:border-red-600 transition-all duration-500 cursor-pointer overflow-hidden backdrop-blur-sm flex flex-col";
-                card.onclick = () => openModal(c.file, c.title, c.org, c.tags);
-                
-                // Create tags HTML
-                const tagsHTML = c.tags.map(tag => 
-                    `<span class="px-2 py-0.5 bg-red-600/10 border border-red-600/20 text-red-500 text-[7px] font-bold rounded uppercase tracking-tighter">${tag}</span>`
-                ).join('');
-
-                card.innerHTML = `
-                    <div class="aspect-video overflow-hidden border-b border-white/5">
-                        <img src="${c.file}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://via.placeholder.com/400x225/111/444?text=Image+Not+Found'">
-                    </div>
-                    <div class="p-5 flex flex-col flex-grow">
-                        <h3 class="text-white font-bold uppercase text-[10px] tracking-tighter mb-1 leading-tight">${c.title}</h3>
-                        <p class="text-gray-500 text-[8px] uppercase tracking-widest mb-4">${c.org}</p>
-                        <div class="mt-auto flex flex-wrap gap-1.5">
-                            ${tagsHTML}
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        renderCerts(trainingCerts, 'trainingGrid');
-        renderCerts(eventCerts, 'eventGrid');
-
-        const modal = document.getElementById('certModal');
-        const modalContent = document.getElementById('modalContent');
-        const modalImg = document.getElementById('modalImg');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalOrg = document.getElementById('modalOrg');
-        const modalTags = document.getElementById('modalTags');
-
-        function openModal(imgSrc, title, org, tags) {
-            modalImg.src = imgSrc;
-            modalTitle.innerText = title;
-            modalOrg.innerText = org;
-            modalTags.innerHTML = '';
+    <div id="certModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeModal()"></div>
+        
+        <div class="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-8 max-w-4xl w-full shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-4 right-6 text-gray-500 hover:text-white text-3xl font-light">&times;</button>
             
-            tags.forEach(tag => {
-                const span = document.createElement('span');
-                span.className = "px-3 py-1 bg-red-600/10 border border-red-600/20 text-red-500 text-[9px] font-bold rounded-full uppercase tracking-tighter";
-                span.innerText = tag;
-                modalTags.appendChild(span);
-            });
+            <div class="flex flex-col gap-6">
+                <img id="modalImg" src="" alt="Full Certificate" class="w-full rounded-xl border border-white/5 shadow-2xl max-h-[70vh] object-contain bg-black">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h3 id="modalTitle" class="text-2xl font-black text-white uppercase tracking-tighter leading-tight"></h3>
+                        <p id="modalOrg" class="text-gray-500 text-xs uppercase tracking-widest mt-1"></p>
+                    </div>
+                    <div id="modalTags" class="flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modalContent.classList.remove('scale-95', 'opacity-0');
-                modalContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modalContent.classList.remove('scale-100', 'opacity-100');
-            modalContent.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => { modal.classList.add('hidden'); }, 300);
-            document.body.style.overflow = 'auto';
-        }
-
-        window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-    </script>
+    <script src="cert-script.js"></script>
 </body>
 </html>
