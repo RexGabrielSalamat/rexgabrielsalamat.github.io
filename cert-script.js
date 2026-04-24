@@ -10,7 +10,7 @@ const trainingCerts = [
     { file: 'assets/certificates/Certificate of Completion - IoT Foundations - Fundamentals.jpg', title: 'IoT Foundations', org: 'LinkedIn Learning', tags: ['IoT', 'Hardware'] },
     { file: 'assets/certificates/Certificate of Completion - Programming Foundations - Inside Computing Hardware.jpg', title: 'Inside Computing Hardware', org: 'LinkedIn Learning', tags: ['Hardware', 'Architecture'] },
     { file: 'assets/certificates/Certificate of Completion - Software Design - Developing Effective Requirements.jpg', title: 'Software Design Requirements', org: 'LinkedIn Learning', tags: ['SDLC', 'Design'] },
-    { file: 'assets/certificates/Certificate of Completion - Introduction to Web Design and Development', title: 'Introduction to Web Design and Development', org: 'LinkedIn Learning', tags: ['Web Development', 'HTML', 'CSS', 'JS'] }
+    { file: 'assets/certificates/Certificate of Completion - Introduction to Web Design and Development.jpg', title: 'Introduction to Web Design and Development', org: 'LinkedIn Learning', tags: ['Web Development', 'HTML', 'CSS', 'JS'] }
 ];
 
 const eventCerts = [
