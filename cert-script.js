@@ -1,3 +1,7 @@
+const achievementCerts = [
+    { file: 'assets/certificates/My Stirling Award - Bronze Level.jpg', title: 'My Stirling Award - Bronze Level', org: 'Universit of Stirling', tags: ['Leadership', 'Communication', 'Academic Excellence'] }
+];
+
 const trainingCerts = [
     { file: 'assets/certificates/Certificate of Completion - Computer System Servicing.jpg', title: 'Computer System Servicing', org: 'Power Technical Training Center', tags: ['Hardware', 'Networking', 'Computer Logic'] },
     { file: 'assets/certificates/Certificate of Completion - Launchpad Ramp.jpg', title: 'Launchpad Ramp', org: 'Endless Studios', tags: ['Team Collaboration', 'Creativity', 'Game Development'] },
@@ -11,7 +15,9 @@ const trainingCerts = [
     { file: 'assets/certificates/Certificate of Completion - Programming Foundations - Inside Computing Hardware.jpg', title: 'Inside Computing Hardware', org: 'LinkedIn Learning', tags: ['Hardware', 'Architecture'] },
     { file: 'assets/certificates/Certificate of Completion - Software Design - Developing Effective Requirements.jpg', title: 'Software Design Requirements', org: 'LinkedIn Learning', tags: ['SDLC', 'Design'] },
     { file: 'assets/certificates/Certificate of Completion - Learning GitHub.jpg', title: 'Learning GitHub', org: 'LinkedIn Learning', tags: ['GitHub'] },
-    { file: 'assets/certificates/Certificate of Completion - Introduction to Web Design and Development.jpg', title: 'Introduction to Web Design and Development', org: 'LinkedIn Learning', tags: ['Web Development', 'HTML', 'CSS', 'JS'] }
+    { file: 'assets/certificates/Certificate of Completion - Introduction to Web Design and Development.jpg', title: 'Introduction to Web Design and Development', org: 'LinkedIn Learning', tags: ['Web Development', 'HTML', 'CSS', 'JS'] },
+    { file: 'assets/certificates/Web Development Fundamentals - IBM Skillsbuild.jpg', title: 'Web Development Fundamentals', org: 'IBM Skillsbuild', tags: ['Web Development', 'HTML', 'CSS', 'JS'] },
+    { file: 'assets/certificates/Certificate of Completion - One Million Prompters.jpg', title: 'One Million Prompters', org: ['Dubai Center for Artificial Intelligence', 'Dubai Future Foundation'], tags: ['Artificial Intelligence'] },
 ];
 
 const eventCerts = [
@@ -88,6 +94,7 @@ function closeModal() {
 
 // Execution
 document.addEventListener('DOMContentLoaded', () => {
+    renderCerts(achievementCerts, 'achievementGrid');
     renderCerts(trainingCerts, 'trainingGrid');
     renderCerts(eventCerts, 'eventGrid');
 });
