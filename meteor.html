@@ -8,94 +8,191 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-gray-200 font-sans leading-relaxed overflow-x-hidden">
+<body class="bg-black text-gray-200 font-sans leading-relaxed overflow-x-hidden selection:bg-red-600 selection:text-white">
 
+    <!-- Ambient Grid & Radial Glow -->
     <div class="fixed inset-0 -z-10">
-        <div class="absolute inset-0 opacity-[0.07]" 
-            style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 50px 50px;">
+        <div class="absolute inset-0 opacity-[0.08]" 
+            style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 40px 40px;">
         </div>
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-[800px] h-[800px] bg-red-900/10 blur-[150px] rounded-full"></div>
-        </div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-600/15 blur-[160px] rounded-full pointer-events-none"></div>
     </div>
 
-    <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
+    <!-- Navigation Header for meteor.html -->
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <img src="assets/petercarter.png" alt="Logo" class="w-8 h-8 rounded-md object-cover">
-                <h1 class="text-xl font-bold tracking-tighter text-white">RG's Project - Meteor Impact Simulator</h1>
+            
+            <!-- Brand Logo with Subtitle -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/petercarter.png" alt="Logo" class="w-8 h-8 rounded-lg object-cover ring-2 ring-red-600/50 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col">
+                    <span class="text-base font-extrabold tracking-tight text-white group-hover:text-red-500 transition-colors leading-none">RG's Portfolio</span>
+                    <span class="text-[9px] text-gray-400 font-mono tracking-[0.2em] uppercase mt-1">Project Showcase</span>
+                </div>
             </a>
-
+            
+            <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
-                <a href="index.html#about" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
-                <a href="index.html#projects" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Projects</a>
-                <a href="index.html#experience" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Experience</a>
-                <a href="index.html#certificates" class="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Certificates</a>
-                <a href="index.html#contact" class="px-5 py-2 bg-red-600/10 border border-red-600/20 text-red-500 rounded-full text-xs font-bold hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest">Contact</a>
+                <a href="index.html#home" class="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
+                <a href="index.html#about" class="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
+                <a href="index.html#projects" class="text-xs font-bold text-white hover:text-red-500 transition-colors uppercase tracking-widest">Projects</a>
+                <a href="index.html#experience" class="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Experience</a>
+                <a href="index.html#certificates" class="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest">Certificates</a>
+                <a href="index.html#contact" class="px-5 py-2 bg-red-600 text-white rounded-full text-xs font-bold shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:bg-red-700 transition-all uppercase tracking-widest">Contact</a>
             </div>
+
+            <!-- Mobile Hamburger Button (ID matches script.js) -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-1">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer (ID & Class match script.js) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/95 backdrop-blur-2xl px-6 py-6 flex flex-col space-y-4">
+            <a href="index.html#home" class="mobile-nav-link text-sm font-bold text-gray-300 hover:text-red-500 transition-colors uppercase tracking-widest">Home</a>
+            <a href="index.html#about" class="mobile-nav-link text-sm font-bold text-gray-300 hover:text-red-500 transition-colors uppercase tracking-widest">About</a>
+            <a href="index.html#projects" class="mobile-nav-link text-sm font-bold text-white hover:text-red-500 transition-colors uppercase tracking-widest">Projects</a>
+            <a href="index.html#experience" class="mobile-nav-link text-sm font-bold text-gray-300 hover:text-red-500 transition-colors uppercase tracking-widest">Experience</a>
+            <a href="index.html#certificates" class="mobile-nav-link text-sm font-bold text-gray-300 hover:text-red-500 transition-colors uppercase tracking-widest">Certificates</a>
+            <a href="index.html#contact" class="mobile-nav-link inline-block text-center px-5 py-3 bg-red-600 text-white rounded-xl text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(220,38,38,0.4)]">Contact</a>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto py-32 px-6 relative z-10">
+    <!-- Floating Chatbot Widget -->
+    <div class="fixed bottom-6 right-6 z-50 font-sans">
+        <!-- Toggle Chat Button -->
+        <button id="chat-toggle-btn" onclick="toggleChat()" class="relative p-4 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center group">
+            <!-- Pulse Indicator Ring -->
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+            <!-- Chat Icon -->
+            <svg id="chat-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            <!-- Close Icon (Hidden by Default) -->
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <!-- Chat Box Window -->
+        <div id="chat-window" class="hidden absolute bottom-16 right-0 w-[88vw] sm:w-80 h-96 bg-black/90 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col overflow-hidden transition-all duration-300">
+            <!-- Header -->
+            <div class="px-4 py-3 bg-white/5 border-b border-white/10 flex items-center gap-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">R-3X</h4>
+                    <p class="text-[9px] text-gray-400 font-mono">Status: Online</p>
+                </div>
+            </div>
+
+            <!-- Chat Body / Messages Area -->
+            <div id="chat-messages" class="flex-1 p-4 space-y-3 overflow-y-auto text-xs text-gray-300">
+                <div class="bg-white/5 border border-white/10 p-3 rounded-xl rounded-tl-none max-w-[85%]">
+                    👋 Hey! I'm Rex's portfolio assistant, R-3X. Ask me about his <strong>certificates</strong>, <strong>projects</strong>, or how to <strong>contact</strong> him!
+                </div>
+            </div>
+
+            <!-- Quick Action Suggestion Chips -->
+            <div class="px-3 py-1.5 border-t border-white/5 flex gap-1.5 overflow-x-auto text-[10px] no-scrollbar">
+                <button onclick="sendQuickMessage('Certificates')" class="px-2.5 py-1 bg-white/5 hover:bg-red-600/20 hover:border-red-600/40 border border-white/10 rounded-full text-gray-400 hover:text-white transition whitespace-nowrap">🏆 Certificates</button>
+                <button onclick="sendQuickMessage('Projects')" class="px-2.5 py-1 bg-white/5 hover:bg-red-600/20 hover:border-red-600/40 border border-white/10 rounded-full text-gray-400 hover:text-white transition whitespace-nowrap">🚀 Projects</button>
+                <button onclick="sendQuickMessage('Contact')" class="px-2.5 py-1 bg-white/5 hover:bg-red-600/20 hover:border-red-600/40 border border-white/10 rounded-full text-gray-400 hover:text-white transition whitespace-nowrap">📬 Contact</button>
+            </div>
+
+            <!-- Input Box -->
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="p-2 border-t border-white/10 bg-white/[0.02] flex gap-2">
+                <input type="text" id="chat-input" placeholder="Ask something..." class="flex-1 bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-red-600 transition" />
+                <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-xl transition flex items-center justify-center">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9-2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto pt-36 pb-20 px-6 relative z-10">
+        
+        <!-- Back Navigation Link -->
+        <div class="mb-8">
+            <a href="index.html#projects" class="inline-flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                Back to Home
+            </a>
+        </div>
+
+        <!-- Project Hero Header -->
         <header class="mb-16">
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase leading-none">
+            <div class="flex flex-wrap items-center gap-2 mb-6">
+                <span class="px-3 py-1 bg-blue-500 text-black font-extrabold text-xs rounded-md shadow-md uppercase tracking-wider">Python</span>
+                <span class="px-3 py-1 bg-red-950/80 border border-red-500/30 text-red-400 font-semibold text-xs rounded-md uppercase tracking-wider">NASA API Integration</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs rounded-md uppercase tracking-wider">Physics Simulation</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight uppercase leading-tight">
                 Meteor Impact <br>
-                <span class="text-red-600 drop-shadow-[0_0_20px_rgba(220,38,38,0.4)]">Simulator</span>
+                <span class="text-red-600 drop-shadow-[0_0_25px_rgba(220,38,38,0.5)]">Simulator</span>
             </h1>
-            <p class="text-xl text-gray-400 max-w-2xl">
+            
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl font-normal leading-relaxed">
                 A physics-based simulation developed for the NASA Space Apps Challenge to assess planetary risk and estimate destruction using real-time data models.
             </p>
         </header>
 
-        <div class="mb-20">
+        <!-- Video Demonstration Section -->
+        <section class="mb-20">
             <div class="flex items-center gap-4 mb-8">
                 <div class="h-8 w-1 bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
                 <h2 class="text-2xl font-black text-white uppercase tracking-tighter">Video Demonstration</h2>
             </div>
-            <div class="aspect-video bg-[#0a0a0a] rounded-2xl border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden">
-                <video controls preload="auto" class="w-full h-full">
+            <div class="aspect-video bg-[#0a0a0a] rounded-2xl border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden hover:border-red-600/30 transition-all">
+                <video controls preload="auto" class="w-full h-full object-cover">
                     <source src="assets/projects/meteor/meteor_impact_sim_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
             </div>
-        </div>
+        </section>
 
-        <div class="mb-20">
+        <!-- Gallery Section -->
+        <section class="mb-20">
             <div class="flex items-center gap-4 mb-8">
                 <div class="h-8 w-1 bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
                 <h2 class="text-2xl font-black text-white uppercase tracking-tighter">Event Gallery</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div onclick="openModal('assets/projects/meteor/screenshot-2.png', 'NASA Space Apps', 'Abu Dhabi Challenge', ['Hackathon', 'NASA'])" 
-                     class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 cursor-pointer group">
+                     class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 cursor-pointer group hover:border-red-500/50 transition-all duration-300">
                     <img src="assets/projects/meteor/screenshot-2.png" alt="Challenge Abu Dhabi" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
                 </div>
                 <div onclick="openModal('assets/projects/meteor/screenshot-1.png', 'NASA Space Apps', 'Impact Analysis UI', ['Python', 'Data Viz'])" 
-                     class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 cursor-pointer group">
-                    <img src="assets/projects/meteor/screenshot-1.png" alt="NASA Certificate" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
+                     class="aspect-video w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 cursor-pointer group hover:border-red-500/50 transition-all duration-300">
+                    <img src="assets/projects/meteor/screenshot-1.png" alt="Impact Analysis UI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
                 </div>
-                <div onclick="openModal('assets/projects/meteor/group-pic.jpg', 'The Development Team', 'NASA Space Apps RAK/Abu Dhabi', ['Collaboration', 'Engineering'])" 
-                     class="aspect-[16/7] w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 md:col-span-2 cursor-pointer group">
+                <div onclick="openModal('assets/projects/meteor/group-pic.jpg', 'The Development Team', 'NASA Space Apps Abu Dhabi', ['Collaboration', 'Engineering'])" 
+                     class="aspect-[16/7] w-full overflow-hidden rounded-2xl border border-white/5 bg-white/5 md:col-span-2 cursor-pointer group hover:border-red-500/50 transition-all duration-300">
                     <img src="assets/projects/meteor/group-pic.jpg" alt="The Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-105">
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="grid md:grid-cols-2 gap-12 mb-20">
-            <div class="bg-white/5 border border-white/5 p-8 rounded-3xl">
+        <!-- Technical Breakdown Cards -->
+        <section class="grid md:grid-cols-2 gap-12 mb-20">
+            <div class="bg-white/5 border border-white/5 p-8 rounded-3xl hover:border-red-500/30 transition-all">
                 <h3 class="text-lg font-black text-white mb-4 uppercase tracking-tighter">Technical Summary</h3>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     The simulator features a dual-input system: it can process <span class="text-white font-medium">real-time data from NASA's API</span> to model historical meteor events or accept <span class="text-white font-medium">custom user specifications</span> for hypothetical impacts. By analyzing variables like velocity, entry angle, and composition through a Python backend, it generates detailed estimated destruction and casualties.
                 </p>
             </div>
-            <div class="bg-white/5 border border-white/5 p-8 rounded-3xl">
+            <div class="bg-white/5 border border-white/5 p-8 rounded-3xl hover:border-red-500/30 transition-all">
                 <h3 class="text-lg font-black text-white mb-4 uppercase tracking-tighter">My Contribution</h3>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     I drove the <span class="text-white font-medium">UI design direction</span> and strategized the <span class="text-white font-medium">API integration</span> to ensure data flowed seamlessly through the system. I established the <span class="text-white font-medium">project repository</span> to manage team version control and final submission, while also taking an active role in <span class="text-white font-medium">debugging</span> the core logic.
                 </p>
             </div>
-        </div>
+        </section>
 
+        <!-- Action Button -->
         <div class="flex justify-center py-10 border-t border-white/5">
             <a href="https://github.com/RexGabrielSalamat/meteor_impact_sim" target="_blank" 
                 class="inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-black uppercase text-xs tracking-widest transition-all shadow-[0_0_25px_rgba(220,38,38,0.4)] hover:scale-105 group">
@@ -104,14 +201,14 @@
             </a>
         </div>
 
-
     </main>
 
+    <!-- Global Footer -->
     <footer class="relative w-full border-t border-white/5 bg-black py-12 overflow-hidden">
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-red-900/5 blur-[100px] -z-10"></div>
 
         <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 
                 <div class="text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
@@ -123,7 +220,8 @@
                     </p>
                 </div>
 
-                <div class="flex gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
+                <!-- Responsive Nav Links -->
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
                     <a href="index.html#home" class="hover:text-red-600 transition-colors">Home</a>
                     <a href="index.html#about" class="hover:text-red-600 transition-colors">About</a>
                     <a href="index.html#projects" class="hover:text-red-600 transition-colors">Projects</a>
@@ -137,7 +235,7 @@
                         &copy; 2026 All Rights Reserved.
                     </p>
                     <p class="text-gray-400 text-[10px] font-mono mt-1">
-                        Last Updated: August 10, 2026
+                        Last Updated: August 13, 2026
                     </p>
                 </div>
             </div>
@@ -150,6 +248,7 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
     <div id="certModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="closeModal()"></div>
 

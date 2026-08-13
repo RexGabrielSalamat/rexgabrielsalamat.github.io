@@ -1,7 +1,80 @@
+/* Core Page Options */
 html {
     scroll-behavior: smooth;
 }
 
+/* Custom Glow Effect Utility */
 .glow-effect {
     box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+}
+
+/* Keyframe Animations */
+@keyframes floatSlow {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+    }
+    50% { 
+        transform: translateY(-15px) scale(1.05); 
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        opacity: 0.15; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.3; 
+        transform: scale(1.1); 
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animation Classes */
+.animate-float { 
+    animation: floatSlow 8s ease-in-out infinite; 
+}
+
+.animate-glow { 
+    animation: pulseGlow 6s ease-in-out infinite; 
+}
+
+/* Gradient Text Shimmer */
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Neon Glow Overlay for Accent Words */
+.glow-text-red {
+    filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.55));
+}
+
+@keyframes wave-text {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.animate-wave {
+    animation: wave-text 1.2s ease-in-out infinite;
+}
+
+/* Fall Off Screen Animation */
+.fall-off {
+    transform: translateY(120vh) rotate(15deg) scale(0.9) !important;
+    opacity: 0.8;
 }
