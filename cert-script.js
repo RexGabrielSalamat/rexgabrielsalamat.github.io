@@ -18,6 +18,7 @@ const trainingCerts = [
     { file: 'assets/certificates/Certificate of Completion - Introduction to Web Design and Development.jpg', title: 'Introduction to Web Design and Development', org: 'LinkedIn Learning', tags: ['Web Development', 'HTML', 'CSS', 'JS'] },
     { file: 'assets/certificates/Web Development Fundamentals - IBM Skillsbuild.jpg', title: 'Web Development Fundamentals', org: 'IBM Skillsbuild', tags: ['Web Development', 'HTML', 'CSS', 'JS'] },
     { file: 'assets/certificates/Certificate of Completion - One Million Prompters.jpg', title: 'One Million Prompters', org: ['Dubai Center for Artificial Intelligence', 'Dubai Future Foundation'], tags: ['Artificial Intelligence'] },
+     { file: 'assets/certificates/Certificate of Completion - Introduction to Data Science - Cisco.jpg', title: 'Introduction to Data Science', org: ['Cisco Networking Academy'], tags: ['Data Science', 'Exploratory Data Analysis (EDA)', 'Machine Learning'] }
 ];
 
 const eventCerts = [
